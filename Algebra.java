@@ -26,42 +26,161 @@ public class Algebra {
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		if(x2<0)
+		{
+			for(int i=0;i<x2;i++)
+			{
+				x1--;
+			}
+		}
+		else if (x2>0)
+		{
+			for(int i=0;i<x1;i++)
+		{
+			x2++;
+		}
+	}
+		return x2;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		if(x2>0)
+		{
+			for(int i=0; i<x2;i++)
+		{
+			x1--;
+		}
+	}
+	else if(x2<0)
+	{
+		for(int i=0;i<x2;i++)
+		{
+			x1++;
+		}
+	}
+		return x1;
+
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int s=0;
+		if((x1>0 && x2>0) || (x1<0 && x2<0))
+		{
+			for(int i=0;i<x1;i++)
+		{
+			for(int n=0;n<x2;n++)
+			{
+				s++;
+			}
+		}
+		if(x1<0 && x2>0)
+		{
+			for(int i=0;i>x1;i--)
+		{
+			for(int n=0;n<x2;n++)
+			{
+				s--;
+			}
+		}
+		}
+	}
+		return s;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
 		// Replace the following statement with your code
-		return 0;
+		int s=1;
+		for(int i=0;i<n;i++)
+		{
+			s=times(s,x);
+		}
+		return s;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+		int count=0;
+		int c=0;
+		if(x1>=x2)
+		{
+			while(x1>=x2)
+		{
+			x1=minus(x1,x2);
+			count++;
+		}
+		return count;
+	}
+	if(x1<0 && x2<0)
+	{
+		x1= times(x1,-1);
+		x2= times(x2,-1);
+		if(x1>=x2)
+		{
+			while(x1>=x2)
+		{
+			x1=minus(x1,x2);
+			count++;
+		}
+		return count;
+	}
+	}
+	if(x1<0 && x2>0)
+	{
+		x1= times(x1,-1);
+		if(x1>=x2)
+		{
+			while(x1>=x2)
+		{
+			x1=minus(x1,x2);
+			count++;
+		}
+		c= times(count,-1);
+		return c;
+	}
+	if(x1>0 && x2<0)
+	{
+		x2= times(x2,-1);
+		if(x1>=x2)
+		{
+			while(x1>=x2)
+		{
+			x1=minus(x1,x2);
+			count++;
+		}
+		c= times(count,-1);
+		return c;
+	}
+}
+	}
+
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		// Replace the following statement with your code
-		return 0;
+			while(x1>=x2)
+		{
+			x1=minus(x1,x2);
+		}
+		return x1;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		// Replace the following statement with your code
-		return 0;
-	}	  	  
-}
+		int i=0;
+		int check=0;
+		while(check<x)
+		{
+			check= pow(i,2);
+			i++;
+		}
+		return i-1;
+	}
+	}	  	
