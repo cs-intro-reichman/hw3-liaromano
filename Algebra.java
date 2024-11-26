@@ -106,7 +106,6 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		// Replace the following statement with your code
 		int count=0;
-		int c=0;
 		if(x1>=x2)
 		{
 			while(x1>=x2)
@@ -114,7 +113,6 @@ public class Algebra {
 			x1=minus(x1,x2);
 			count++;
 		}
-		return count;
 	}
 	if(x1<0 && x2<0)
 	{
@@ -127,7 +125,6 @@ public class Algebra {
 			x1=minus(x1,x2);
 			count++;
 		}
-		return count;
 	}
 	}
 	if(x1<0 && x2>0)
@@ -140,8 +137,7 @@ public class Algebra {
 			x1=minus(x1,x2);
 			count++;
 		}
-		c= times(count,-1);
-		return c;
+		count= times(count,-1);
 	}
 	if(x1>0 && x2<0)
 	{
@@ -153,12 +149,10 @@ public class Algebra {
 			x1=minus(x1,x2);
 			count++;
 		}
-		c= times(count,-1);
-		return c;
+		count= times(count,-1);
 	}
 }
-	}
-
+}return count;
 	}
 
 	// Returns x1 % x2
