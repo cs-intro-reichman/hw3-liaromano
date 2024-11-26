@@ -168,6 +168,10 @@ public class Algebra {
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
 		// Replace the following statement with your code
+		if(x<0)
+		{
+			return -1;
+		}
 		int i=0;
 		int check=0;
 		while(check<x)
