@@ -158,7 +158,7 @@ public class Algebra {
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
 		// Replace the following statement with your code
-			while(x1>=x2)
+			while(x1 >= x2)
 		{
 			x1=minus(x1,x2);
 		}
