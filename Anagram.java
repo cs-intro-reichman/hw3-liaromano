@@ -31,21 +31,26 @@ public class Anagram {
 		// Replace the following statement with your code
 		String str1n= preProcess(str1);
 		String str2n= preProcess(str2);
-		String c="";
 		if(str1n.length()!=str2n.length())
 		{
 			return false;
 		}
-		else{
+		else
+		{
 			for(int i=0;i<str1n.length();i++)
+		{
+			while(str1n.length()>0)
 		{
 			if(str1n.indexOf(str2n.charAt(i))==-1)
 			{
 				return false;
 			}
-
+			else{
+				str2= str2.substring(0,i)+str2n.substring(i+1);
+			}
 		}
 		}
+	}
 		return true;
 	}
 	   
@@ -56,9 +61,9 @@ public class Anagram {
 		// Replace the following statement with your code
 		str= str.toLowerCase();
 		String n="";
-		for(int i=0;i<str.length()-1;i++)
+		for(int i=0;i<str.length();i++)
 		{
-			if(str.charAt(i)>='a'&& str.charAt(i)<='z')
+			if((str.charAt(i)>='a'&& str.charAt(i)<='z')|| (str.charAt(i)==' '))
 			{
 				n=n+ str.charAt(i);
 			}
@@ -70,19 +75,14 @@ public class Anagram {
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
 		// Replace the following statement with your code
-		int max= str.length();
+		str= preProcess(str);
 		String n="";
-		int c=0;
-		for(int i=0;i<max;i++)
+		int random=0;
+		while(str.length()>0)
 		{
-			c=(int)(Math.random()*max);
-			while(n.indexOf(str.charAt(c))!=-1)
-			{
-				c=(int)(Math.random()*max);
-
-			}
-			n=n+str.charAt(c);
-
+			random=(int)(str.length()*Math.random());
+			n=n+str.charAt(random);
+			str= str.substring(0,random)+str.substring(random+1);
 		}
 		return n;
 	}
