@@ -37,18 +37,17 @@ public class Anagram {
 		}
 		else
 		{
-			for(int i=0;i<str1n.length();i++)
+			int i=0;
+			while(str2n.length()>0 && i<str2.length())
 		{
-			while(str1n.length()>0)
-		{
-			if(str1n.indexOf(str2n.charAt(i))==-1)
+			if(str2n.indexOf(str1n.charAt(i))==-1)
 			{
 				return false;
 			}
 			else{
 				str2= str2.substring(0,i)+str2n.substring(i+1);
 			}
-		}
+			i++;
 		}
 	}
 		return true;
